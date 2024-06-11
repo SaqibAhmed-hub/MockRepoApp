@@ -13,12 +13,20 @@ import javax.inject.Inject
 class ApiCaller @Inject constructor(
     val mockApiCaller: MockApiCaller
 ) {
+    /**
+     * This is common function used for to call the API ,
+     * if we don't have response then, we can mock the API by local
+     * sample response
+     * @param isMockedEnabled define whether it's a local or network call
+     * @param jsonPath define the path of the json file in the assets dir.
+     * @return flow of the common response
+     * @author Saqib Ahmed
+     */
     suspend inline fun <reified T> safeAPICall(
         isMockedEnabled : Boolean = false,
         jsonPath: String = "",
         crossinline call: suspend () -> Response<T>
-    )
-    : Flow<ResponseState<T>> =
+    ): Flow<ResponseState<T>> =
         if(isMockedEnabled){
             mockApiCaller.mockApi<T>(jsonPath)
         }else{

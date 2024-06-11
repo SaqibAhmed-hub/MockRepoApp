@@ -12,8 +12,6 @@ sealed interface DataError {
     enum class Network: DataError {
         REQUEST_TIMEOUT,
         BAD_REQUEST,
-        TOO_MANY_REQUESTS,
-        NO_INTERNET,
         UN_AUTHORIZED,
         NOT_FOUND,
         CONFLICTED,

@@ -8,9 +8,6 @@ import com.example.mockrepoapp.domain.RetrofitHelper
 import com.example.mockrepoapp.model.MemesResponse
 import com.example.mockrepoapp.network.ResponseState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

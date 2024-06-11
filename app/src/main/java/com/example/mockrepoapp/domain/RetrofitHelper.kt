@@ -1,6 +1,5 @@
 package com.example.mockrepoapp.domain
 
-import com.example.mockrepoapp.model.BaseResponse
 import com.example.mockrepoapp.model.MemesResponse
 import com.example.mockrepoapp.network.ResponseState
 import kotlinx.coroutines.flow.Flow
