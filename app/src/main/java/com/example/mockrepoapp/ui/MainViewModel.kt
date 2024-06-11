@@ -33,7 +33,7 @@ class MainViewModel @Inject constructor(
 
     fun getMemesAPI() {
         viewModelScope.launch {
-            apiHelper.getMemes().collect { state ->
+            apiHelper.getMemes(true,"json/memesResponse.json").collect { state ->
                 _getMemesLiveData.value = state
             }
         }

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getMockDataAPI() {
-        mainViewModel.getMockAPI()
+        mainViewModel.getMemesAPI()
     }
 
 

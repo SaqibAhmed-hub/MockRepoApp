@@ -16,7 +16,10 @@ class RetrofitHelperImpl @Inject constructor(
     override suspend fun getMockAPI(path: String): Flow<ResponseState<MemesResponse>>  =  mockApiCaller.mockApi<MemesResponse>(path)
 
 
-    override suspend fun getMemes(): Flow<ResponseState<MemesResponse>>  =  apiCaller.safeAPICall {
+    override suspend fun getMemes(
+        isMockEnabled: Boolean,
+        jsonPath: String
+    ): Flow<ResponseState<MemesResponse>> = apiCaller.safeAPICall(isMockEnabled, jsonPath) {
         apiService.getMemes()
     }
 }
